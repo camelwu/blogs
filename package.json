@@ -1,0 +1,27 @@
+{
+  "name": "blogs",
+  "version": "1.0.0",
+  "description": "private express+mongoDB exercies.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^3.0.1"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camelwu/blogs.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "camelwu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/camelwu/blogs/issues"
+  },
+  "homepage": "https://github.com/camelwu/blogs#readme"
+}

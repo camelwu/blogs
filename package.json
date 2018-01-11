@@ -3,13 +3,20 @@
   "version": "1.0.0",
   "description": "private express+mongoDB exercies.",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.17.1",
+    "ejs": "^2.5.7",
+    "http-proxy-middleware": "^0.17.4"
+  },
   "devDependencies": {
     "express": "^4.16.2",
-    "mongodb": "^3.0.1"
+    "mongodb": "^3.0.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.10.0"
   },
   "scripts": {
-    "test": "test"
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",

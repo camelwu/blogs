@@ -1,0 +1,834 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><{$ktitle}></title>
+		<meta name="Keywords" content="<{$keywords}>" />
+		<meta name="Description" content="<{$description}>" />
+		<link href="<{$siteurl}>/css/global.css" rel="stylesheet" type="text/css">
+		<link href="<{$siteurl}>/css/index.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<{include_php file="./view/common/header.php"}>
+		<div class="slideBox">
+			<!--焦点图-->
+			<div class="wrapper slide_search">
+				<div class="banner_search" id="banner_search">
+					<input type="text" placeholder="我要去..." />
+					<a href="javascript:;"> </a>
+				</div>
+			</div>
+			<div class="bd">
+				<ul>
+					<{foreach item=banneritem from=$banner}>
+					<li style="display: none;">
+						<a href="<{$banneritem.mypath}>" target="_blank"><img src="<{$banneritem.url}>" /></a>
+					</li>
+					<{/foreach}>
+				</ul>
+			</div>
+			<a class="prev" href="javascript:void(0)"> </a><a class="next" href="javascript:void(0)"> </a>
+		</div>
+
+		<div class="wrapper recom_box">
+			<!--推荐旅游-->
+			<div class="recom_title">
+				人生苦短，多走走没遗憾
+				<ul class="clrfix">
+					<li class="recom_on">
+						<a href="/overseas/------/hits/desc" class="recom_on">当季最热</a>
+					</li>
+				</ul>
+			</div>
+			<div class="recom_main">
+				<{foreach name=outer01 item=contact from=$hots}>
+				<ul class="recom_bd<{$smarty.foreach.outer01.index+1}>">
+					<li class="rbd_img">
+						<a href="<{$contact.mypath}>" target="_blank"><img src="<{$contact.url}>" border="0" width="372"<{if $smarty.foreach.outer01.index eq 1}>height="515"<{else}>height="210"<{/if}>></a>
+					</li>
+					<li class="rbd_txt">
+						<div class="rbd_l_bg">
+							<div class="fl_rbd_title">
+								<a href="<{$contact.mypath}>"><{$contact.title}></a>
+							</div>
+							<div class="fl_rbd_hd">
+								<a href="<{$contact.mypath}>"><{$contact.content}></a><!--<a href="search/<{$contact.departure}>"><{$contact.li}></a>•<a href="search/<{$contact.di}>"><{$contact.city2}></a>-->
+							</div>
+							<div class="rbd_r_bg">
+								<{$contact.price2}>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<{/foreach}>
+			</div>
+		</div>
+		<div class="wrapper hot_org clrfix">
+			<!--热门跟团游-->
+			<div class="index_main_title">
+				<div class="hot_title">
+					热门跟团游
+				</div>
+				<ul class="index_option hot_option">
+					<li class="index_option_on">
+						国内游
+					</li>
+					<li>
+						出境游
+					</li>
+					<li>
+						周边游
+					</li>
+				</ul>
+			</div>
+			<div id="gt_tours" class="div_option">
+				<span>
+					<ul class="city_box clrfix fl">
+						<li class="city_li_on">
+							<a href="/domestic/--33-------">西安</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">云南</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">桂林</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">厦门</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">丽江</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">华东</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">张家界</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">九寨沟</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">三亚</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">泰山</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">西藏</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">云台山</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">内蒙古</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">长白山</a>
+						</li>
+						<li>
+							<a href="/domestic/--33-------">新疆</a>
+						</li>
+					</ul>
+					<ul class="scenic_area fl">
+						<ul class="sa_title clrfix">
+							<div class="fl">
+								热门目的地：
+							</div>
+							<li class="sa_title_on">
+								<a href="/domestic/--33-------">云南</a>
+							</li>
+							<li>
+								<a href="/domestic/--33-------">桂林</a>
+							</li>
+							<li>
+								<a href="/domestic/--33-------">厦门</a>
+							</li>
+							<li>
+								<a href="/domestic/--33-------">华东</a>
+							</li>
+							<li>
+								<a href="/domestic/--33-------">西安</a>
+							</li>
+							<li>
+								<a href="/domestic/--33-------">西藏</a>
+							</li>
+							<a href="/domestic">更多&gt;</a>
+						</ul>
+						<{foreach name=gtgn item=xl from=$gnroute}>
+						<li>
+							<a href="./tours/<{$xl.id}>" class="sa_img"
+							target="_blank"> <img src="<{$xl.url}>" width="230"
+							height="138" />
+							<div class="sa_price">
+								￥<{$xl.price2}>起
+							</div>
+							<div class="sa_mask">
+								<span><{$xl.title}>
+									<br>
+									<{$xl.word}> </span>
+							</div> </a><a href="./tours/<{$xl.id}>" class="sa_txt" target="_blank"><{$xl.title}></a>
+						</li>
+						<{/foreach}>
+					</ul>
+					<div class="scenic_recom fl">
+						<a href="./tours/<{$gnline.id}>" target="_blank"><div class="cover_bg" style="background-image: url(<{$gnline.url}>)"></div></a>
+						<a href="./tours/<{$gnline.id}>" class="sr_txt"><{$gnline.title}></a>
+					</div> </span>
+				<!--跟团1-->
+				<span style="display: none">
+					<ul class="city_box clrfix fl">
+						<li class="city_li_on">
+							<a href="/overseas/--33-------">西安</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">云南</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">桂林</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">厦门</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">丽江</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">华东</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">张家界</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">九寨沟</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">三亚</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">泰山</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">西藏</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">云台山</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">内蒙古</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">长白山</a>
+						</li>
+						<li>
+							<a href="/overseas/--33-------">新疆</a>
+						</li>
+					</ul>
+					<ul class="scenic_area fl">
+						<ul class="sa_title clrfix">
+							<div class="fl">
+								热门目的地：
+							</div>
+							<li class="sa_title_on">
+								<a href="/overseas/--33-------">云南</a>
+							</li>
+							<li>
+								<a href="/overseas/--33-------">桂林</a>
+							</li>
+							<li>
+								<a href="/overseas/--33-------">厦门</a>
+							</li>
+							<li>
+								<a href="/overseas/--33-------">华东</a>
+							</li>
+							<li>
+								<a href="/overseas/--33-------">西安</a>
+							</li>
+							<li>
+								<a href="/overseas/--33-------">西藏</a>
+							</li>
+							<a href="/overseas">更多&gt;</a>
+						</ul>
+						<{foreach name=gtcj item=xl from=$cjroute}>
+						<li>
+							<a href="./tours/<{$xl.id}>" class="sa_img" target="_blank"> <img src="<{$xl.url}>" width="230" height="138" />
+							<div class="sa_price">
+								￥<{$xl.price2}>起
+							</div>
+							<div class="sa_mask">
+								<span><{$xl.title}>
+									<br>
+									<{$xl.word}></span>
+							</div> </a><a href="./tours/<{$xl.id}>" class="sa_txt" target="_blank"><{$xl.title}></a>
+						</li>
+						<{/foreach}>
+					</ul>
+					<div class="scenic_recom fl">
+						<a href="./tours/<{$cjline.id}>" target="_blank"><div class="cover_bg" style="background-image: url(<{$cjline.url}>)"></div></a>
+						<a href="./tours/<{$cjline.id}>" class="sr_txt" target="_blank"><{$cjline.title}></a>
+					</div> </span>
+				<!--跟团2-->
+				<span style="display: none">
+					<ul class="city_box clrfix fl">
+						<li class="city_li_on">
+							<a href="/touraround/--33-------">西安</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">云南</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">桂林</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">厦门</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">丽江</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">华东</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">张家界</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">九寨沟</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">三亚</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">泰山</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">西藏</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">云台山</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">内蒙古</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">长白山</a>
+						</li>
+						<li>
+							<a href="/touraround/--33-------">新疆</a>
+						</li>
+					</ul>
+					<ul class="scenic_area fl">
+						<ul class="sa_title clrfix">
+							<div class="fl">
+								热门目的地：
+							</div>
+							<li class="sa_title_on">
+								<a href="/touraround/--33-------">云南</a>
+							</li>
+							<li>
+								<a href="/touraround/--33-------">桂林</a>
+							</li>
+							<li>
+								<a href="/touraround/--33-------">厦门</a>
+							</li>
+							<li>
+								<a href="/touraround/--33-------">华东</a>
+							</li>
+							<li>
+								<a href="/touraround/--33-------">西安</a>
+							</li>
+							<li>
+								<a href="/touraround/--33-------">西藏</a>
+							</li>
+							<a href="/touraround">更多&gt;</a>
+						</ul>
+						<{foreach name=gtzb item=xl from=$zbroute}>
+						<li>
+							<a href="./tours/<{$xl.id}>" class="sa_img"
+							target="_blank"> <img src="<{$xl.url}>" width="230"
+							height="138" />
+							<div class="sa_price">
+								￥<{$xl.price2}>起
+							</div>
+							<div class="sa_mask">
+								<span><{$xl.title}>
+									<br>
+									<{$xl.word}> </span>
+							</div> </a><a href="./tours/<{$xl.id}>" class="sa_txt" target="_blank"><{$xl.title}></a>
+						</li>
+						<{/foreach}>
+					</ul>
+					<div class="scenic_recom fl">
+						<a href="./tours/<{$zbline.id}>" target="_blank"><div class="cover_bg" style="background-image: url(<{$zbline.url}>)"></div></a>
+						<a href="./tours/<{$zbline.id}>" class="sr_txt" target="_blank"><{$zbline.title}></a>
+					</div> </span>
+				<!--跟团3-->
+			</div>
+		</div>
+
+		<div class="wrapper hotel_box clrfix">
+			<!--游轮签证-->
+			<div class="index_main_title">
+				<div class="cv_title">
+					游轮签证
+				</div>
+				<ul class="index_option cv_option">
+					<li class="index_option_on">
+						签证
+					</li>
+					<li>
+						游轮
+					</li>
+				</ul>
+			</div>
+			<div id="cv_tours" class="div_option">
+				<!--游轮签证1-->
+				<span> <a href="#" class="city_box fl"><img src="images/city_box1.jpg" width="230" height="394" /></a>
+					<ul class="scenic_area fl">
+						<ul class="cvh_title clrfix">
+							<div class="fl">
+								热门国家：
+							</div>
+							<{foreach name=pass item=gj from=$pass}>
+							<li>
+								<a href="./visa/<{$gj.id}>_1"><{$gj.title}></a>
+							</li>
+							<{/foreach}>
+							<li>
+								<a href="./visa">更多&gt;</a>
+							</li>
+						</ul>
+						<{foreach name=qz item=qz from=$visa}>
+						<li>
+							<a href="./visa/<{$qz.id}>" class="sa_img"> <img
+							src="<{$qz.url}>" width="230" height="138" />
+							<div class="sa_price">
+								￥<{$qz.price1}>
+							</div>
+							<div class="sa_mask">
+								<span><{$qz.title}>
+									<br>
+									<{$qz.word}> </span>
+							</div> </a><a href="./visa/<{$qz.id}>" class="sa_txt"><{$qz.title}></a>
+						</li>
+						<{/foreach}>
+					</ul> </span>
+				<!--游轮签证2-->
+				<span style="display: none"> <a href="#" class="city_box fl"><img
+					src="images/city_box2.jpg" width="230" height="394" /></a>
+					<ul class="scenic_area fl">
+						<ul class="cvh_title clrfix">
+							<div class="fl">
+								精选航次：
+							</div>
+							<li>
+								<a href="#">东南亚</a>
+							</li>
+							<li>
+								<a href="#">济州岛</a>
+							</li>
+							<li>
+								<a href="#">日本</a>
+							</li>
+							<li>
+								<a href="#">韩国</a>
+							</li>
+							<li>
+								<a href="./cruises">更多&gt;</a>
+							</li>
+						</ul>
+						<{foreach name=yl item=yl from=$ylroute}>
+						<li>
+							<a href="./tours/<{$yl.id}>" class="sa_img"
+							target="_blank"> <img src="<{$yl.url}>" width="230"
+							height="138" />
+							<div class="sa_price">
+								￥<{$yl.price2}>起
+							</div>
+							<div class="sa_mask">
+								<span><{$yl.title}>
+									<br>
+									<{$yl.word}> </span>
+							</div> </a><a href="<{$yl.id}>" class="sa_txt" target="_blank"><{$yl.title}></a>
+						</li>
+						<{/foreach}>
+					</ul> </span>
+			</div>
+		</div>
+
+		<div class="wrapper hotel_box clrfix">
+			<!--景点门票-->
+			<div class="index_main_title">
+				<div class="hotel_title">
+					景点门票
+				</div>
+			</div>
+			<a href="./detail/<{$sight.id}>" class="city_box fl" title="<{$sight.title}>" target="_blank"> <div class="cover_bg" style="background-image: url(<{$sight.url}>);" alt="<{$sight.title}>"></div> </a>
+			<ul class="scenic_area fl clrfix">
+				<ul class="cvh_title clrfix">
+					<div class="fl">
+						精选景点门票：
+					</div>
+					<{foreach name=jd item=jd from=$menpiao}>
+					<li>
+						<a href="./detail/<{$jd.id}>" target="_blank"><{$jd.title}></a>
+					</li>
+					<{/foreach}>
+					<li>
+						<a href="./scenic" target="_blank">更多&gt;</a>
+					</li>
+				</ul>
+				<{foreach name=scenic item=scenic from=$scenic}>
+				<li>
+					<a href="./detail/<{$scenic.id}>" class="sa_img"
+					target="_blank"> <img src="<{$scenic.url}>" width="230"
+					height="138" />
+					<div class="sa_price">
+						￥<{$scenic.price1}>起
+					</div>
+					<div class="sa_mask">
+						<span><{$scenic.title}>
+							<br>
+							<{$scenic.word}> </span>
+					</div> </a><a href="<{$scenic.id}>" class="sa_txt" target="_blank"><{$scenic.title}></a>
+				</li>
+				<{/foreach}>
+			</ul>
+		</div>
+
+		<div class="wrapper free_box clrfix">
+			<!--人气自由行-->
+			<div class="index_main_title">
+				<div class="free_title">
+					人气自由行
+				</div>
+				<ul class="index_option free_travel">
+					<li class="index_option_on">
+						出境自由行
+					</li>
+					<li>
+						国内自由行
+					</li>
+				</ul>
+			</div>
+			<div id="zy_tours" class="div_option">
+				<span>
+					<ul class="city_box clrfix fl">
+						<li class="city_li_on">
+							<a href="/freeline/------/hits/desc">香港</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">马尔代夫</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">韩国</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">澳门</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">毛里求斯</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">塞舌尔</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">斯里兰卡</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">长滩岛</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">斐济</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">日本</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">泰国</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">沙巴</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">新加坡</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">清迈</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">普吉岛</a>
+						</li>
+					</ul>
+					<ul class="scenic_area fl">
+						<ul class="sa_title clrfix">
+							<div class="fl">
+								热门目的地：
+							</div>
+							<li class="sa_title_on">
+								<a href="/freeline/------/hits/desc">马尔代夫</a>
+							</li>
+							<li>
+								<a href="/freeline/------/hits/desc">毛里求斯</a>
+							</li>
+							<li>
+								<a href="/freeline/------/hits/desc">塞舌尔</a>
+							</li>
+							<li>
+								<a href="/freeline/------/hits/desc">泰国</a>
+							</li>
+							<li>
+								<a href="/freeline/------/hits/desc">夏威夷</a>
+							</li>
+							<li>
+								<a href="/freeline/------/hits/desc">日韩</a>
+							</li>
+							<li>
+								<a href="/freeline/------/hits/desc">香港</a>
+							</li>
+							<a href="/freeline/">更多&gt;</a>
+						</ul>
+						<{foreach name=zycj item=zycj from=$cjfree}>
+						<li>
+							<a href="./tours/<{$zycj.id}>" class="sa_img"
+							target="_blank"> <img src="<{$zycj.url}>" width="230"
+							height="138" />
+							<div class="sa_price">
+								￥<{$zycj.price2}>起
+							</div>
+							<div class="sa_mask">
+								<span><{$zycj.title}>
+									<br>
+									<{$zycj.word}> </span>
+							</div> </a><a href="<{$zycj.id}>" class="sa_txt" target="_blank"><{$zycj.title}></a>
+						</li>
+						<{/foreach}>
+					</ul>
+					<div class="scenic_recom fl">
+						<a href="./tours/<{$cfree.id}>" target="_blank"><div class="cover_bg" style="background-image: url(<{$cfree.url}>)"></div></a>
+						<a href="./tours/<{$cfree.id}>" class="sr_txt" target="_blank"><{$cfree.title}><span>.<{$cfree.info}></span></a>
+					</div> </span>
+				<!--free1-->
+				<span style="display: none">
+					<ul class="city_box clrfix fl">
+						<li class="city_li_on">
+							<a href="/freeline/------/hits/desc">北京</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">马尔代夫</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">韩国</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">澳门</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">毛里求斯</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">塞舌尔</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">斯里兰卡</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">长滩岛</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">斐济</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">日本</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">泰国</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">沙巴</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">新加坡</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">清迈</a>
+						</li>
+						<li>
+							<a href="/freeline/------/hits/desc">普吉岛</a>
+						</li>
+					</ul>
+					<ul class="scenic_area fl">
+						<ul class="sa_title clrfix">
+							<div class="fl">
+								热门目的地：
+							</div>
+							<li class="sa_title_on">
+								<a href="/freeline/------/hits/desc">西藏</a>
+							</li>
+							<li>
+								<a href="/freeline/------/hits/desc">青海</a>
+							</li>
+							<li>
+								<a href="/freeline/------/hits/desc">卡塔尔</a>
+							</li>
+							<li>
+								<a href="/freeline/------/hits/desc">云南</a>
+							</li>
+							<li>
+								<a href="/freeline/------/hits/desc">杭州</a>
+							</li>
+							<li>
+								<a href="/freeline/------/hits/desc">厦门</a>
+							</li>
+							<li>
+								<a href="/freeline/------/hits/desc">北京</a>
+							</li>
+							<a href="/freeline/">更多&gt;</a>
+						</ul>
+						<{foreach name=zygn item=zyx from=$gnfree}>
+						<li>
+							<a href="./tours/<{$zyx.id}>" class="sa_img"
+							target="_blank"> <img src="<{$zyx.url}>" width="230"
+							height="138" />
+							<div class="sa_price">
+								￥<{$zyx.price2}>起
+							</div>
+							<div class="sa_mask">
+								<span><{$zyx.title}>
+									<br>
+									<{$zyx.word}> </span>
+							</div> </a><a href="<{$zyx.id}>" class="sa_txt" target="_blank"><{$zyx.title}></a>
+						</li>
+						<{/foreach}>
+					</ul>
+					<div class="scenic_recom fl">
+						<a href="./tours/<{$gfree.id}>" target="_blank"><div class="cover_bg" style="background-image: url(<{$gfree.url}>)"></div></a>
+						<a href="./tours/<{$gfree.id}>" class="sr_txt" target="_blank"><{$gfree.title}><span>.<{$gfree.info}></span></a>
+					</div> </span>
+				<!--free2-->
+			</div>
+		</div>
+
+		<div class="wrapper">
+			<!--旅行攻略-->
+			<div class="index_main_title">
+				<div class="traveling_title">
+					综合浏览
+				</div>
+			</div>
+			<ul class="traveling_box clrfix">
+				<!--热门攻略-->
+				<li class="tra_recom">
+					<a href="./read/<{$newl.id}>" target="_blank"> <div class="cover_bg" style="background-image: url(<{$newl.url}>)"></div></a>
+					<div class="tra_recom_txt">
+						<a href="./read/<{$newl.id}>" target="_blank"><{$newl.title}></a>
+						<span><{$newl.info}></span>
+					</div>
+				</li>
+				<!--推荐攻略-->
+				<li class="tra_bd">
+					<ul class="scenic_area fl clrfix">
+						<{foreach name=yj item=yj from=$news}>
+						<li>
+							<a href="./read/<{$yj.id}>" class="sa_img"
+							target="_blank"> <img src="<{$yj.url}>" width="230"
+							height="138" />
+							<div class="sa_mask">
+								<span><{$yj.title}>/<{$yj.word}></span>
+							</div> </a><a href="./read/<{$yj.id}>" class="sa_txt" target="_blank"><{$yj.title}></a>
+						</li>
+						<{/foreach}>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="wrapper">
+			<!--合作商家-->
+			<div class="coop_title">
+				合作伙伴
+			</div>
+			<ul class="coop_img clrfix">
+				<{foreach from=$link item=linkitem}>
+				<li>
+					<a href="<{$linkitem.web_url}>"
+					title="<{$linkitem.web_key}>" target="_blank"><img
+					src="<{$linkitem.url}>" width="240" height="80" /></a>
+				</li>
+				<{/foreach}>
+			</ul>
+		</div>
+		<div class="commitment_box">
+			<!--金桥五大承诺-->
+			<ul class="wrapper clrfix">
+				<li class="comm_title">
+					金桥五大承诺&nbsp;&nbsp;让你旅游放心
+				</li>
+				<li class="comm_cq">
+					产品优质
+				</li>
+				<li class="comm_jg">
+					价格最新
+				</li>
+				<li class="comm_bz">
+					预约价格保证
+				</li>
+				<li class="comm_qy">
+					维护权益
+				</li>
+				<li class="comm_pf">
+					先行赔付
+				</li>
+			</ul>
+		</div>
+		<{include file='./view/common/footer.html'}>
+		<{include_php file="./view/common/right.php"}>
+	</body>
+	
+	<script>
+		$(function() {
+			$(".scenic_area>li").mouseenter(function() {
+				$(this).find(".sa_mask").stop(false).animate({
+					bottom : 0
+				}, 300);
+			});
+			$(".scenic_area>li").mouseleave(function() {
+				$(this).find(".sa_mask").stop(false).animate({
+					bottom : -138
+				}, 200);
+			});
+			$(".index_option li").click(function() {//热门跟团游title单击事件
+				$(this).siblings().removeClass("index_option_on");
+				$(this).addClass("index_option_on");
+				var al_num = $(".index_option li").index(this);
+				var al_dom = "#" + $(this).parent().parent().next().attr("id");
+				if (al_num == 4 || al_num == 3) {
+					al_num = al_num - 3;
+				} else if (al_num == 5 || al_num == 6) {
+					al_num = al_num - 5;
+				}
+				$(al_dom).children("span").hide();
+				//alert($(al_dom+" span").eq(1).html());
+				$(al_dom).children("span").eq(al_num).show(0);
+			});
+			$(".sa_title li").click(function() {//热门跟团游二级title单击事件
+				$(this).siblings().removeClass("sa_title_on");
+				$(this).addClass("sa_title_on");
+			});
+			$(".recom_box ul li").click(function() {//推荐旅游导航单击事件
+				$(this).siblings().removeClass("recom_on");
+				$(this).addClass("recom_on");
+			});
+			$(".city_box li").click(function() {//热门跟团游左侧景区
+				$(this).siblings().removeClass("city_li_on");
+				$(this).addClass("city_li_on");
+			});
+			$(".slideBox").slide({
+				mainCell : ".bd ul",
+				effect : "fold",
+				autoPlay : true,
+				easing : "easeOutCirc",
+				delayTime : 800
+			});
+		});
+	</script>
+</html>
+

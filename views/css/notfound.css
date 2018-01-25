@@ -1,0 +1,56 @@
+body,html,p,h1,a{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: #000000;
+}
+.notf-main{
+	width: 450px;
+	height: 450px;
+	position: fixed;
+	top: 50%;
+	margin-top: -225px;
+	left: 50%;
+	margin-left: -225px;
+}
+.notf-logo{
+	width: 100%;
+	height: 250px;
+	background: url(/statics/img/notfound.png) no-repeat top center;
+}
+.notf-title{
+	color: #666666;
+	font-family: '微软雅黑';
+	font-size: 30px;
+	font-weight: normal;
+	width: 100%;
+	text-align: center;
+	margin-top: 25px;
+}
+.notf-cont{
+	width: 375px;
+	margin: 20px auto 0;
+	text-align: center;
+	color: #959595;
+	font-family: '微软雅黑';
+	font-size: 14px;
+	line-height: 22px;
+}
+.notf-link{
+	width: 125px;
+	height: 40px;
+	margin: 30px auto;
+}
+.notf-link a{
+	background: #4590e4;
+	color: #ffffff;
+	font-family: '微软雅黑';
+	font-size: 14px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	display: block;
+	border-radius: 3px;
+}

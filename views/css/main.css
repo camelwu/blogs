@@ -1,0 +1,429 @@
+html,body,div,h1,p,ul,li,img,span,a{
+	padding:0;
+	margin:0;
+}
+input,button,select{
+  outline:none
+}
+a{
+	color:#666666;
+	text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+	}
+ul{
+	list-style: none;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+	line-height: 80px;
+}
+.clearfix{
+	clear:both;
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+html,body{
+	width:100%;
+	min-width: 1024px;
+	background: #ffffff;
+}
+body{
+	font-size: 16px;
+  	font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+	color:#666666;
+}
+/* 默认样式结束*/
+/* 头部样式*/
+.header-box{
+	width:100%;
+	height: 80px;
+	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.1);
+}
+.header{
+	/*max-width:1200px;
+	min-width:1024px;*/
+	width: 100%;
+	height: 100%;
+  box-sizing: border-box;
+  padding:0 50px;
+}
+.header>div{
+	height: 100%;
+}
+.header .title{
+	display: inline-block;
+	width: 200px;
+	height: 100%;
+	color: #4B84F9 ;
+	background: url(../css/img/website/header.png) no-repeat center;
+	background-size:100% 67px;
+}
+.header .header-btn{
+    height: 100%;
+    width: 80px;
+    cursor: pointer;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+}
+.header .header-btn.active{
+	box-sizing: border-box;
+	border-bottom:3px solid #4B84F9;
+	background: rgba(74,131,249,0.06);
+}
+/* 头部右侧样式*/
+.header .login-btn,.header .create-company-btn{
+	  color:#666666;
+    height: 36px;
+    line-height: 36px;
+    width: 101px;
+    border-radius: 50px;
+    margin-top: 20px;
+    text-align: center;
+}
+.header .login-btn{
+    background: #4B84F9;
+    font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "5b8b4f53", sans-serif;;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+.header .create-company-btn{
+    border: 1px solid #257AED;
+    border-radius: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "5b8b4f53", sans-serif;;
+    font-size: 16px;
+    color: #4B84F9;
+    margin-left: 20px;
+}
+/* 平台切换按钮 */
+.nav{
+	min-width:1024px;
+	height: 92px;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 92px;
+}
+.nav>span{
+	padding:37px 0px 37px 28px;
+	margin:0 60px;
+	color:#999999;
+	cursor: pointer;
+}
+.nav>span:hover{
+	color:#4B84F9;
+}
+.nav>span.active{
+	position: relative;
+	color:#4B84F9;
+}
+.nav>span.active:after{
+	content: "";
+	position: absolute;
+	top:76px;
+	left:50%;
+	margin-left:-10px;
+	width:0px;
+	height: 0px;
+	border:10px solid #F6F7FB;
+	border-color:transparent transparent #F6F7FB transparent;
+	border-width:8px 10px;
+
+}
+.nav .macx{
+	padding-left: 37px;
+}
+.nav .window-btn{
+	background: url(../css/img/download/windows.png) no-repeat left 36px;
+}
+.nav .window-btn:hover{
+	background: url(../css/img/download/windows-hover.png) no-repeat left 36px;
+}
+.nav .window-btn.active{
+	background: url(../css/img/download/windows-hover.png) no-repeat left 36px;
+}
+
+.nav .ios-btn{
+	background: url(../css/img/download/apple.png) no-repeat left 33px;
+}
+.nav .mac-btn{
+	background: url(../css/img/website/macx.png) no-repeat left 32px;
+	background-size: 26px 26px;
+}
+.nav .mac-btn:hover{
+	background: url(../css/img/website/mac-copy2x.png) no-repeat left 32px;
+	background-size: 26px 26px;
+}
+.nav .ios-btn:hover{
+	background: url(../css/img/download/apple-hover.png) no-repeat left 33px;
+}
+.nav .mac-btn.active{
+	background: url(../css/img/website/mac-copy2x.png) no-repeat left 32px;
+	background-size: 26px 26px;
+}
+.nav .ios-btn.active{
+	background: url(../css/img/download/apple-hover.png) no-repeat left 33px;
+}
+
+.nav .android-btn{
+	background: url(../css/img/download/android.png) no-repeat left 33px;
+}
+.nav .android-btn:hover{
+	background: url(../css/img/download/android-hover.png) no-repeat left 33px;
+}
+.nav .android-btn.active{
+	background: url(../css/img/download/android-hover.png) no-repeat left 33px;
+}
+/* banner 样式 */
+.content-box{
+	width:100%;
+}
+.content-box>div{
+	width:100%;
+}
+.download{
+	padding-top:140px;
+	height: 400px;
+	min-width:1024px;
+	max-width: 1200px;
+	margin:0 auto;
+}
+.size,.system{
+	margin-right: 20px;
+}
+.slogan{
+	font-size: 22px;
+	margin-bottom: 30px;
+}
+.system-time{
+	font-size: 12px;
+	margin-bottom: 40px;
+	color:#999999;
+}
+.size-version{
+	font-size: 12px;
+	margin-bottom: 10px;
+	color:#999999;
+}
+.download-btn{
+	display: block;
+	width:300px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background: #4B84F9;
+	box-shadow: 0px 4px 6px 0px rgba(74,131,249,0.50);
+	border-radius: 100px;
+	margin-left: 52px;
+	color:#ffffff;
+}
+.download-btn:hover{
+	background: #2B67E4;
+}
+.download-btn span{
+	padding:2px 0px 0px 33px;
+	background: url(../css/img/download/donwload.png) no-repeat left center;
+}
+/* 各平台 的banner 特殊样式 */
+
+/* windows */
+.windows-content{
+	background: url(../css/img/download/windowsBanner.png) no-repeat center top;
+  background-size: 100% auto;
+}
+.windows-content .download>p{
+	margin-left: 52px;
+	max-width: 350px;
+}
+.windows-content .title{
+	line-height: 36px;
+	font-size: 36px;
+	color:#333333;
+	margin-bottom: 27px;
+}
+/* mac */
+.mac-content{
+	background: url(../css/img/download/macbanner.png) no-repeat center top;
+  background-size: 100% auto;
+}
+.mac-content .download>p{
+	margin-left: 52px;
+	max-width: 345px;
+}
+.mac-content .title{
+	line-height: 36px;
+	font-size: 36px;
+	color:#333333;
+	margin-bottom: 27px;
+}
+/* android */
+.android-content{
+	background: url(../css/img/download/android-banner.png) no-repeat center top;
+	background-size: 100% auto;
+}
+.android-content .download>p{
+	margin-left: 132px;
+	max-width: 345px;
+}
+.android-content .title{
+	line-height: 36px;
+	font-size: 36px;
+	color:#333333;
+	margin-bottom: 27px;
+}
+/* ios */
+.ios-content{
+	background: url(../css/img/download/ios-banner.png) no-repeat center top;
+	background-size: 100% auto;
+}
+.ios-content .download>p{
+	margin-left: 132px;
+	max-width: 345px;
+}
+.ios-content .title{
+	line-height: 36px;
+	font-size: 36px;
+	color:#333333;
+	margin-bottom: 27px;
+}
+
+/* 版本 更新列表*/
+.version-list{
+	max-width:1148px;
+	padding-top:90px;
+	padding-left:52px;
+	padding-bottom:270px;
+	margin:0 auto;
+}
+.version-list .title{
+	font-size: 24px;
+	line-height: 24px;
+	color:#333333;
+}
+.version-list ul{
+	margin-top:60px;
+	margin-bottom: 30px;
+}
+.version-list ul li{
+	position: relative;
+	padding-left:32px;
+	margin-bottom: 25px;
+}
+.version-list ul li:after{
+	content:'';
+	position: absolute;
+	top:4px;
+	left:0;
+	width:10px;
+	height: 10px;
+	border:2px solid #cccccc;
+	border-radius: 50%;
+}
+.version-list .time {
+	margin-left:50px;
+	font-size: 14px;
+	color:#999;
+}
+.version-list .new{
+	width: 31px;
+	height: 14px;
+	color: #fff;
+	background: #FC4141;
+	border-radius: 2px;
+	font-size: 12px;
+	margin-left: 5px;
+	padding: 0 3px;
+}
+.version-list .more{
+	color:#4B84F9;
+	font-size: 14px;
+}
+.version-list .more:hover{
+	color:#2B67E4;
+}
+.version-list a:hover{
+	color:#4B84F9;
+}
+.footer{
+    width: 100%;
+    height:263px;
+    background-color: #050F31;
+}
+.footer-top{
+    height: 197px;
+    width: 1213px;
+    margin: 0 auto;
+    border-bottom: 1px solid #222738;
+}
+.footer-img{
+    display: inline-block;
+    width: 140px;
+    height: 95px;
+    background: url(../css/img/website/fotter.png) no-repeat;
+    background-size: contain;
+    margin-top: 30px;
+    float: left;
+    margin-right: 123px;
+    /*cursor: pointer;*/
+}
+.footer-box{
+    float: left;
+    height: 140px;
+    width:125px;
+    margin-top: 40px;
+}
+.footer-p{
+    font-size: 14px;
+	color: #8C8F99;
+    margin-bottom: 10px;
+	cursor: default;
+}
+.footer-a{
+    display: block;
+    font-size: 12px;
+    color:  #50576F;
+    line-height: 25px;
+}
+
+.footer-p:hover,.footer-a:hover{
+    color: #8C8F99;
+}
+.last{
+    width: 230px;
+}
+.last .footer-a{
+	cursor: text;
+}
+.last .footer-a:hover{
+	color: #8C8F99;
+}
+.footer-mar{
+    margin-left: 100px;
+}
+.footer-bottom{
+    width: 1213px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #50576F;
+    line-height: 25px;
+    padding-top: 20px;
+    text-align: center;
+}
+.create-company-btn:hover{
+    border-color: #257AED;
+    color: #257AED;
+}
+.header .header-btn:hover{
+    background-color:#257AED;
+    color: #fff;
+}
+.header .login-btn:hover{
+    background: #257AED;
+}

@@ -1,0 +1,655 @@
+@charset "utf-8";
+/****************
+ * @description : APP下载
+ * @author    : felix
+ * @date      : 2016-09-07
+ ****************/
+
+/*css reset*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0
+}
+
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
+        -webkit-text-size-adjust: none
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+        display: block;
+        clear: both;
+}
+
+body {
+        font-family: 'Microsoft YaHei', helvetica, arial, sans-serif;
+        -webkit-text-size-adjust: none;
+        color: #1a1a1a;
+        -webkit-text-size-adjust: none;
+        font-size: 16px;
+        min-width: 320px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+        font-size: 100%;
+        font-weight: normal
+}
+
+form {
+        display: inline
+}
+
+textarea {
+        resize: none
+}
+
+table {
+        border-collapse: collapse;
+        border-spacing: 0
+}
+
+ul, ol {
+        list-style: none
+}
+
+input, select, button {
+        font-family: 'XinGothic-SinaWeibo', 'Microsoft YaHei', helvetica, arial, sans-serif;
+        font-size: 100%;
+        vertical-align: middle;
+        outline: none;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+        cursor: pointer;
+        -webkit-appearance: button;
+        -moz-appearance: button
+}
+
+input:focus:-moz-placeholder, input:focus::-webkit-input-placeholder {
+        color: transparent
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+        padding: 0;
+        border: 0
+}
+
+a {
+        text-decoration: none;
+        color: #1a1a1a;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:hover, a:active, a:focus {
+        color: #3990e6;
+        text-decoration: none;
+}
+
+a:active {
+        color: #aaa;
+}
+
+img {
+        vertical-align: middle;
+        border: 0;
+        -ms-interpolation-mode: bicubic;
+}
+
+.left {
+        float: left;
+}
+
+.right {
+        float: right;
+}
+
+.hide {
+        display: none !important;
+}
+
+.show {
+        display: block !important;
+}
+
+.ellipsis {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+}
+
+.clearfix:after {
+        content: '\0020';
+        display: block;
+        height: 0;
+        clear: both
+}
+
+.clearfix {
+        *zoom: 1
+}
+
+.ellipsis {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: block;
+}
+
+.download {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url(/css/img/download5/Pasted.jpg);
+        background-size: cover;
+        overflow: hidden;
+}
+
+.download_box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -150px 0 0 -75px;
+        z-index: 10;
+        width: 150px;
+        height: 365px;
+}
+
+.download_box .logo {
+        width: 143px;;
+        height: 93px;
+        background: url(/css/img/download5/Group5-2x.png) left top no-repeat;
+        background-size: 100% auto;
+        margin: 0 auto;
+}
+
+.download .download_buttons {
+        width: 146px;
+        margin: 128px auto 0px;
+}
+
+.download_box .download-ios {
+        display: block;
+        height: 45px;
+        margin: 0 auto;
+        border: 2px solid #b5d0ed;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 45px;
+        color: #5593d0;
+        background-color: #fff;
+        font-size: 14px;
+        -webkit-tap-highlight-color: transparent;
+        tap-highlight-color: transparent;
+}
+.download_box .ios-tip{
+        font-size: 12px;
+        color: #5A96D1;
+        text-align: center;
+        width: 178px;
+        margin-left: -10%;
+        margin-top: 5px;
+        margin-bottom: 23px;
+        line-height: 18px;
+}
+
+.download_box .download-android {
+        display: block;
+        height: 45px;
+        margin: 14px auto 0px;
+        border: 2px solid #b5d0ed;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 45px;
+        color: #5593d0;
+        background-color: #fff;
+        font-size: 14px;
+        -webkit-tap-highlight-color: transparent;
+        tap-highlight-color: transparent;
+}
+
+/*竖屏样式*/
+@media screen and (orientation: portrait) {
+
+}
+
+/*横屏样式*/
+@media screen and (orientation: landscape) {
+        .download_box {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin: -52px 0 0 -150px;
+                z-index: 10;
+                width: 300px;
+                height: 160px;
+        }
+
+        .download_box .logo {
+                margin: 2px auto 0px;
+                float: left;
+        }
+
+        .download .download_buttons {
+                margin: 0px;
+                float: right;
+        }
+}
+
+.footer {
+        width: 200%;
+        height: 1rem;
+        background: url(/css/img/download5/Rectangle9-2x.png) repeat-x;
+        background-size: 50%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 10;
+        -webkit-animation: grass 10s infinite linear;
+}
+
+/*微信分享引导层*/
+.wechat_guide {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+}
+
+.wechat_guide .shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: .7
+}
+
+.wechat_guide .guide {
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        width: 53px;
+        height: 286px;
+        background: url(/css/img/download5/wechat_guide.png) 0 0 no-repeat;
+        background-size: 50px auto;
+}
+
+@-webkit-keyframes grass {
+        0% {
+                left: 0;
+        }
+        100% {
+                left: -100%;
+        }
+}
+
+.mountain1 {
+        width: 7rem;
+        height: 3.4rem;
+        background: url(/css/img/download5/shan-2x.png);
+        background-size: contain;
+        position: absolute;
+        bottom: 0;
+        z-index: 5;
+        -webkit-animation: mountain-first 28s infinite linear;
+}
+
+@-webkit-keyframes mountain-first {
+        0% {
+                right: -7rem;
+        }
+        100% {
+                right: 100%;
+        }
+}
+
+.mountain2 {
+        width: 6.45rem;
+        height: 3.15rem;
+        background: url(/css/img/download5/shan3-2x.png);
+        background-size: contain;
+        position: absolute;
+        bottom: 0;
+        z-index: 4;
+        -webkit-animation: mountain-second 41s infinite linear;
+}
+
+@-webkit-keyframes mountain-second {
+        0% {
+                right: -15rem;
+        }
+        100% {
+                right: 100%;
+        }
+}
+
+.mountain3 {
+        width: 5.65rem;
+        height: 2.75rem;
+        background: url(/css/img/download5/shan2-2x.png);
+        background-size: contain;
+        position: absolute;
+        z-index: 3;
+        bottom: 0;
+        -webkit-animation: mountain-third 50s infinite linear;
+}
+
+@-webkit-keyframes mountain-third {
+        0% {
+                right: -8rem;
+        }
+        100% {
+                right: 100%;
+        }
+}
+
+.mountain4 {
+        width: 3.5rem;
+        height: 1.7rem;
+        background: url(/css/img/download5/shan4-2x.png);
+        background-size: contain;
+        position: absolute;
+        z-index: 3;
+        bottom: 0;
+        -webkit-animation: mountain-fourth 65s infinite linear;
+}
+
+@-webkit-keyframes mountain-fourth {
+        0% {
+                right: -7rem;
+        }
+        100% {
+                right: 100%;
+        }
+}
+
+.cloud1 {
+        width: 2.55rem;
+        height: 1.5rem;
+        background: url(/css/img/download5/cloud2-2x.png);
+        background-size: contain;
+        position: absolute;
+        top: 0.5rem;
+        -webkit-animation: cloud-first 45s infinite linear;
+
+}
+
+@-webkit-keyframes cloud-first {
+        0% {
+                right: -2.55rem;
+        }
+        100% {
+                right: 100%;
+        }
+}
+
+.cloud2 {
+        width: 6.3rem;
+        height: 3.75rem;
+        background: url(/css/img/download5/cloud-2x.png);
+        background-size: contain;
+        -webkit-animation: cloud-second 20s infinite linear;
+        position: absolute;
+        top: 1.6rem;
+
+}
+
+@-webkit-keyframes cloud-second {
+        0% {
+                right: -6.3rem;
+        }
+        100% {
+                right: 100%;
+        }
+}
+
+.cloud3 {
+        width: 4.3rem;
+        height: 2.55rem;
+        background: url(/css/img/download5/cloud3-2x.png);
+        background-size: contain;
+        position: absolute;
+        top: 8rem;
+        -webkit-animation: cloud-third 25s infinite linear;
+
+}
+
+@-webkit-keyframes cloud-third {
+        0% {
+                right: -12.9rem;
+        }
+        100% {
+                right: 100%;
+        }
+}
+
+.cloud4 {
+        width: 2.55rem;
+        height: 1.5rem;
+        background: url(/css/img/download5/cloud2-2x.png);
+        background-size: contain;
+        position: absolute;
+        top: 14.5rem;
+        -webkit-animation: cloud-fourth 35s infinite linear;
+
+}
+
+@-webkit-keyframes cloud-fourth {
+        0% {
+                right: -21.5rem;
+        }
+        100% {
+                right: 100%;
+        }
+}
+
+.cloud5 {
+        width: 3.05rem;
+        height: 2rem;
+        background: url(/css/img/download5/cloud2-2x.png) no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 19.5rem;
+        -webkit-animation: cloud-fifth 40s infinite linear;
+
+}
+
+@-webkit-keyframes cloud-fifth {
+        0% {
+                right: -3.05rem;
+        }
+        100% {
+                right: 100%;
+        }
+}
+
+#mask {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        opacity: 0;
+        display: none;
+}
+
+#mask.show {
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        opacity: 1;
+}
+
+.cus-dialog {
+        width: 13rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 30;
+        margin-left: -6.5rem;
+        background: #fff;
+        border-radius: 0.5rem;
+        font-family: "微软雅黑";
+        font-size: 0.7rem;
+        opacity: 0;
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: translateZ(200px);
+        transform: translateZ(200px);
+        display: none;
+}
+
+.prompt-modalr.show {
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+}
+
+.prompt-modalr .title {
+        height: 1.5rem;
+        line-height: 1.5rem;
+        padding: 0.2rem;
+        color: #444;
+        text-align: center;
+}
+
+.prompt-modalr .tip {
+        padding: 22px;
+        line-height: 22px;
+        font-size: 14px;
+}
+
+.prompt-modalr .close {
+        width: 100%;
+        text-align: center;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        position: relative;
+        overflow: hidden;
+}
+
+.btn-mask {
+        width: 100%;
+        height: 100%;
+        background: #ccc;
+        opacity: 0.3;
+        position: absolute;
+        top: 0;
+        display: none;
+}
+
+.prompt-modal, .prompt-modalr {
+        width: 14.6rem;
+        position: absolute;
+        left: 50%;
+        margin-left: -7.3rem;
+        font-size: 16px;
+        text-align: center;
+        top: 50%;
+        z-index: 222;
+        background: #fff;
+        box-sizing: border-box;
+        border-radius: 15px;
+
+}
+
+#mask.shadow {
+        opacity: 1;
+        display: block;
+}
+
+.prompt-modal .content, .prompt-modalr.content {
+        padding: 22px;
+        line-height: 22px;
+        font-size: 14px;
+}
+
+.prompt-modal a, .prompt-modalr a {
+        color: #448fe2;
+        border-top: 1px solid #ededef;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        display: block;
+        height: 2.75rem;
+        line-height: 2.75rem;
+}
+
+.anim-show, .shadow_in {
+        -webkit-animation-name: _animation_in;
+        -webkit-animation-duration: 0.2s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-delay: 0s;
+        animation-name: _animation_in;
+        animation-duration: 0.2s;
+        animation-iteration-count: 1;
+        animation-delay: 0s;
+        -moz-animation-name: _animation_in;
+        -moz-animation-duration: 0.2s;
+        -moz-animation-iteration-count: 1;
+        -moz-animation-delay: 0s;
+        -ms-animation-name: _animation_in;
+        -ms-animation-duration: 0.2s;
+        -ms-animation-iteration-count: 1;
+        -ms-animation-delay: 0s;
+
+}
+
+.anim-out, .shadow_out {
+        -webkit-animation-name: _animation_out;
+        -webkit-animation-duration: 0.2s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-delay: 0s;
+        animation-name: animation_out;
+        animation-duration: 0.2s;
+        animation-iteration-count: 1;
+        animation-delay: 0s;
+        -moz-animation-name: _animation_out;
+        -moz-animation-duration: 0.2s;
+        -moz-animation-iteration-count: 1;
+        -moz-animation-delay: 0s;
+        -ms-animation-name: _animation_in;
+        -ms-animation-duration: 0.2s;
+        -ms-animation-iteration-count: 1;
+        -ms-animation-delay: 0s;
+}
+
+@-webkit-keyframes _animation_in {
+        0% {
+                opacity: 0;
+        }
+        50% {
+                opacity: 0.5;
+        }
+        100% {
+                opacity: 1;
+        }
+
+}
+
+@-webkit-keyframes _animation_out {
+        0% {
+                opacity: 1;
+        }
+        50% {
+                opacity: 0.5;
+        }
+        100% {
+                opacity: 0;
+        }
+
+}
+
+
+
+
+
+
+

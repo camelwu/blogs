@@ -1,34 +1,52 @@
 const fs = require('fs')
-module.exports = function(app){
-  app.get('*', function(req, res){
-    if('/'==req.path){
-      res.render('index', {title:'Express',cover:{}})
+
+// get访问
+function handle_get(req, res){
+  if('/'==req.path){
+    res.render('index', {title:'Express',cover:{}})
+  }else{
+    let exists = fs.existsSync('./views'+req.path+'.html')
+    let path = req.path
+        path = path.slice(1,path.length)
+    if(exists){
+      res.render(path, {title:'moban', error: 'Something blew up!' })
     }else{
-      fs.exists('./views'+req.path+'.html',(ex) => {
-        if(ex){
-          let path = req.path
-          path = path.slice(1,path.length)
-          res.render(path, {title:'moban', error: 'Something blew up!' });
-        }else{
-          res.status(500).send({ error: 'Something blew up!' });
-        }
-      })
-      
+      res.status(404).send({ error: 'no file!' });
     }
-  })
-  /*app.get('/', function(req, res){
-    res.render('index', {title:'Express',cover:{}})
-  })
-  app.get('/search', function(req, res){
-    res.render('index', {title:'Express',cover:{}})
-  })
-  app.get('/async', function(req, res){
-    res.render('index', {title:'Express',cover:{}})
-  })
-  app.get('/login', function(req, res){
-    res.render('login', {title:'Express',cover:{}})
-  })
-  app.get('/register', function(req, res){
-    res.render('register', {title:'Express',cover:{}})
-  })*/
+  }
+}
+// post请求
+function handle_post(req, res){
+  res.render('index', {title:'Express',cover:{}})
+}
+// delete请求
+function handle_delete(req, res){
+  res.render('index', {title:'Express',cover:{}})
+}
+// put请求
+function handle_put(req, res){
+  res.render('login', {title:'Express',cover:{}})
+}
+
+module.exports = function(app){
+  app.get('*', handle_get(app))
+  app.post('*', handle_post(app))
+  app.put('*', handle_put(app))
+  app.delete('*', handle_delete(app))
+  app.use(function(req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+  });
+  
+  // error handler
+  app.use(function(err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+  
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
+  });
 };

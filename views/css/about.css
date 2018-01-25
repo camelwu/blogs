@@ -1,0 +1,387 @@
+html,body,div,h1,p,ul,li,img,span,a{
+    padding:0;
+    margin:0;
+}
+input,button,select{
+  outline:none
+}
+a{
+    color:#666666;
+    text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+    }
+ul{
+    list-style: none;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+    line-height: 80px;
+}
+.clearfix:after {
+    content: "020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.hide{
+    display: none !important;
+}
+.show{
+    display: block;
+}
+html,body{
+    width:100%;
+    min-width: 1024px;
+    background: #ffffff;
+}
+body{
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+    color:#666666;
+    width: 100%;
+    min-width: 1024px;
+}
+/* 默认样式结束*/
+/* 头部样式*/
+.header-box{
+    width:100%;
+    height: 80px;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1000;
+}
+.header{
+ /*   max-width:1200px;
+    min-width:1024px;*/
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+   /* margin: 0 auto;*/
+   padding:0 50px;
+}
+.header>div{
+    height: 100%;
+}
+.header .title{
+    display: inline-block;
+    width: 200px;
+    height: 100%;
+    color: #4B84F9 ;
+    background: url(../css/img/website/header.png) no-repeat center;
+    background-size:100% 67px;
+}
+.header .header-btn{
+    height: 100%;
+    width: 80px;
+    cursor: pointer;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+}
+.header .header-btn.active{
+    box-sizing: border-box;
+    border-bottom:3px solid #4B84F9;
+    background: rgba(74,131,249,0.06);
+}
+/* 头部右侧样式*/
+.header .login-btn,.header .create-company-btn{
+      color:#666666;
+    height: 36px;
+    line-height: 36px;
+    width: 101px;
+    border-radius: 50px;
+    margin-top: 20px;
+    text-align: center;
+}
+.header .login-btn{
+    background: #4B84F9;
+    font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "5b8b4f53", sans-serif;;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+.header .login-btn:hover{
+    background: #257AED;
+}
+.header .create-company-btn{
+    border: 1px solid #257AED;
+    border-radius: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "5b8b4f53", sans-serif;;
+    font-size: 16px;
+    color: #4B84F9;
+    margin-left: 20px;
+}
+/*下面样式*/
+.container{
+    padding: 0;
+    margin: 0;
+    padding-top: 20px;
+    width: 100%;
+    min-width: 1224px;
+    height: 100%;
+    background-color:#f9f9f9;
+}
+.container .menu{
+    width: 300px;
+    height: 280px;
+    background-color: #fff;
+    border:none;
+    border-radius: 4px;
+    padding-top: 20px;
+    float: left;
+}
+.container .menu h3{
+    margin: 0;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    color: #333333;
+    font-weight: normal;
+}
+.menu-img{
+    background: url(../css/img/website/compa.png)no-repeat;
+    background-size:22px 22px;
+    background-position: 20px 13px;
+}
+.menu-img.selected{
+    background: url(../css/img/website/company.png)no-repeat #efefef !important;
+    background-size:22px 22px !important;
+    background-position: 20px 13px !important;
+}
+.menu-im{
+    background: url(../css/img/website/phone.png)no-repeat;
+    background-size:22px 22px;
+    background-position: 20px 13px;
+}
+.menu-im.selected{
+    background: url(../css/img/website/phon.png)no-repeat #efefef !important;
+    background-size:22px 22px !important;
+    background-position: 20px 13px !important;
+}
+.positionIicon{
+    width: 22px;
+    height: 22px;
+    margin:14px 20px 0 20px;
+    float: left;
+}
+.container .menu ul{
+    padding-left: 62px;
+}
+.container .menu ul li{
+    height: 50px;
+    line-height: 50px;
+}
+.container .menu .selected{
+    background: #efefef;
+    border-radius: 0px;
+    color: #257AED;
+}
+.container .content{
+    float: left;
+    margin-left: 40px;
+    background-color: #fff;
+    margin-bottom: 90px;
+    width: 860px;
+}
+.menu_tab{
+    padding: 50px 50px 0 50px;
+}
+.tt-title{
+    font-size: 18px !important;
+    color: #666666;
+    margin-bottom: 10px;
+}
+.rehide{
+    display: block;
+}
+.container .h3{
+    display: block;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    padding-left: 62px;
+    box-sizing: border-box;
+}
+.two-title{
+    font-size: 24px;
+    color: #333333;
+    margin-top: 30px;
+    text-align: center;
+}
+.xie-one{
+    font-size: 12px;
+    color: #666666;
+    line-height: 24px;
+    margin-top: 80px;
+    margin-bottom: 25px;
+}
+.xie-two{
+    font-size: 12px;
+    color: #333;
+    font-weight: 600;
+    line-height: 24px;
+}
+.xie-three{
+    font-size: 12px;
+    color: #666666;
+    line-height: 24px;
+}
+.menu-two{
+    padding-bottom: 120px;
+}
+.menu-two h3{
+    font-size: 16px;
+    color: #333333;
+    line-height: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.xie-four{
+    font-size: 12px;
+    color: #666666;
+    line-height: 24px;
+    text-align: justify;
+    text-indent: 2rem;
+}
+.xie{
+    font-size: 12px;
+    line-height: 24px;
+    color: #666;
+    text-indent: 2rem;
+}
+.company-name{
+    font-size: 16px;
+    color: #333333;
+    line-height: 24px;
+    margin: 30px 0 20px 0;
+    font-weight: 600;
+}
+#container {
+    width: 760px;
+    height: 340px;
+    margin: 0px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    display: block;
+}
+.amap-ui-control-position-lb{
+    bottom: 15px !important;
+    left: 5px !important;
+}
+.way{
+    padding-bottom: 120px;
+}
+.container-box{
+    margin: 0 auto;
+    position: relative;
+    width: 1200px;
+}
+.create-company-btn:hover{
+    border-color: #257AED;
+    color: #257AED;
+}
+.header .header-btn:hover{
+    background-color:#257AED;
+    color: #fff;
+}
+#second{
+    display: none;
+}
+/**/
+.culture{
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+    margin-top: 20px;
+}
+/*.menu a:hover{
+    background: #efefef;
+}*/
+.footer{
+    width: 100%;
+    height:263px;
+    background-color: #050F31;
+}
+.footer-top{
+    height: 197px;
+    width: 1213px;
+    margin: 0 auto;
+    border-bottom: 1px solid #222738;
+}
+.footer-img{
+    display: inline-block;
+    width: 140px;
+    height: 95px;
+    background: url(../css/img/website/fotter.png) no-repeat;
+    background-size: contain;
+    margin-top: 30px;
+    float: left;
+    margin-right: 123px;
+    /*cursor: pointer;*/
+}
+.footer-box{
+    float: left;
+    height: 140px;
+    width:125px;
+    margin-top: 40px;
+}
+.footer-p{
+    font-size: 14px;
+    color: #8C8F99;
+    margin-bottom: 10px;
+    cursor: default;
+}
+.footer-a{
+    display: block;
+    font-size: 12px;
+    color:  #50576F;
+    line-height: 25px;
+}
+.footer-a:hover{
+    color: #8C8F99;
+}
+.last{
+    width: 230px;
+}
+.last .footer-a{
+    cursor: text;
+}
+.last .footer-a:hover{
+    color: #50576F;
+}
+.footer-mar{
+    margin-left: 100px;
+}
+.footer-bottom{
+    width: 1213px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #50576F;
+    line-height: 25px;
+    padding-top: 20px;
+    text-align: center;
+}
+.create-company-btn:hover{
+    border-color: #257AED;
+    color: #257AED;
+}
+.header .header-btn:hover{
+    background-color:#257AED;
+    color: #fff;
+}
+.header .login-btn:hover{
+    background: #257AED;
+}
+.footer-mail{
+    color:  #50576F;
+}
+.footer-mail:hover{
+    color: #8C8F99;
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -1,0 +1,35 @@
+@charset "utf-8";
+/****************
+ * @description : 激活
+ * @author    : felix
+ * @date      : 2016-09-06
+ ****************/
+
+/*css reset*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0}html,body,form,fieldset,p,div,h1,h2,h3,h4,h5,h6{-webkit-text-size-adjust:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;clear:both;}
+body{font-family:'Microsoft YaHei',helvetica,arial,sans-serif;-webkit-text-size-adjust:none;color:#1a1a1a;-webkit-text-size-adjust:none;font-size:14px;min-width:320px;}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal}form{display:inline}textarea{resize:none}table { border-collapse:collapse; border-spacing:0}ul,ol{list-style:none}input,select,button{font-family:'XinGothic-SinaWeibo','Microsoft YaHei',helvetica,arial,sans-serif;font-size:100%; vertical-align:middle;outline:none;}
+button,input[type="button"],input[type="reset"],input[type="submit"] {cursor:pointer;-webkit-appearance:button;-moz-appearance:button}
+input:focus:-moz-placeholder,input:focus::-webkit-input-placeholder {color:transparent}
+button::-moz-focus-inner,input::-moz-focus-inner { padding:0; border:0}
+a{text-decoration:none;color:#1a1a1a}
+a:hover, a:active, a:focus{color:#3990e6;text-decoration: none;}
+a:active{color:#aaa;}
+img{vertical-align:middle;border:0;-ms-interpolation-mode:bicubic;}
+.left{float:left;}
+.right{float:right;}
+.hide{display:none !important;}
+.show{display: block !important;}
+.ellipsis{ white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.clearfix:after{content:'\0020';display:block;height:0;clear:both}
+.clearfix{*zoom:1}
+.ellipsis{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;display:block;}
+
+.answer_info{max-width:600px;padding-bottom:20px;margin:0 auto;}
+.answer_info .question{font-size:16px;margin-top:8px;line-height:28px;color:#333;border-bottom:1px solid #e3e3e3;margin-left:20px; padding:18px 20px 8px 0px;}
+.answer_info .answer{margin:0px 20px;}
+.answer_info .title{font-size:14px;line-height:24px;color:#333;margin-top:18px;}
+.answer_info .pic{margin-top:12px;display:block;width:100%;}
+.answer_info p{font-size:12px;margin-top:12px;line-height:20px;color:#888;}
+
+

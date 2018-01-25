@@ -1,0 +1,225 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    /*background-color: #F6F7FB;*/
+    font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+    overflow: hidden;
+}
+
+a {
+    color: #5aacec;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+
+}
+input{
+    outline: none;
+}
+.clearfix:after {
+    content: "020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    min-width: 1007px;
+    min-height: 900px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /*background-color: #F6F7FB;;*/
+    -moz-background-size:cover;
+    -webkit-background-size:cover;
+    -o-background-size:cover;
+    background-size: cover;
+}
+/* 头部样式*/
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.fc{
+    float: left;
+    width: 72px;
+    height: 70px;
+    display: block;
+    line-height: 70px;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+
+    font-size: 16px;
+    color: #666666;
+}
+.fc:hover{
+    background:rgba(74,131,249,0.06);
+}
+.header-box{
+    width:100%;
+    height: 70px;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.1);
+    /*background: #ffffff;*/
+}
+.header{
+    min-width: 1007px;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+.header>div{
+    height: 100%;
+}
+.header .title{
+    height: 100%;
+    line-height: 70px;
+    font-size: 20px;
+    padding-left:62px;
+    padding-right: 50px;
+    color: #4B84F9 ;
+    background: url(../css/img/download/logo.png) no-repeat 10px center;
+    background-size:42px 48px;
+}
+/* 头部右侧样式*/
+.header .login-btn,.header .create-company-btn{
+    color:#666666;
+    height: 50px;
+    line-height: 50px;
+    padding:10px;
+    font-size: 16px;
+}
+
+/*图片样式*/
+.det-img{
+    display: block;
+    width: 100%;
+    height: 200px;
+}
+/*详情页标题样式设置*/
+.det-content-box{
+    position: absolute;
+    top:75px;
+    bottom: 0;
+    left: 0;
+    right:0;
+    background-color: #fff;
+    overflow-y: auto;
+}
+.det-content{
+    margin: 0 auto;
+    margin-top:60px;
+    padding-bottom: 120px;
+    width:1000px;
+    height: 100%;
+
+}
+.det-title{
+    width:1000px;
+    margin: 0 auto;
+    margin-top:100px;
+    font-size: 24px;
+    color: #333333;
+    font-family: "Microsoft Yahei", "微软雅黑";
+    text-align: center;
+}
+.det-content .section-warpper{
+    font-size: 14px;
+    color: #666666;
+    line-height: 24px;
+    margin-top:24px;
+}
+.det-content .section-warpper .section2{
+    margin-top:24px;
+}
+.det-content .section-warpper .section3{
+    margin-top:0;
+}
+.det-content .list{
+    margin-top: 40px;
+    font-size: 14px;
+    color: #666666;
+    line-height: 24px;
+}
+.det-content .last-list{
+    margin-bottom:233px;
+}
+.det-content .list .Title-level-one{
+    font-size: 16px;
+    color: #333333;
+    line-height: 24px;
+    font-family: "Microsoft Yahei", "微软雅黑";
+}
+.det-content .list .two-title-warpper{
+    margin-top: 20px;
+}
+.det-content .list .two-title-warpper .sub-line{
+    margin-top: 20px;
+}
+.det-content .list .two-title-warpper .last{
+    margin-top: 0;
+}
+/*.det-title{*/
+    /*margin: 0 auto;*/
+/*}*/
+/*.det-title span{*/
+    /*font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;*/
+    /*font-size: 22px;*/
+    /*color: #333333;*/
+/*}*/
+/*.det-circle{*/
+    /*float: left;*/
+    /*width: 12px;*/
+    /*height: 12px;*/
+    /*border: 3px solid #4B84F9;*/
+    /*border-radius:50%;*/
+    /*margin:7px 23px 0 0;*/
+/*}*/
+/*.det-date{*/
+    /*font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;*/
+
+    /*font-size: 12px;*/
+    /*color: #999999;*/
+    /*margin:20px 0 40px 41px;*/
+/*}*/
+/*.det-update{*/
+    /*font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;*/
+
+    /*font-size: 14px;*/
+    /*color: #666666;*/
+    /*margin-left: 41px;*/
+/*}*/
+
+/*!*详情页标题图片更新样式*!*/
+/*.det-actual{*/
+    /*margin-top: 70px;*/
+    /*padding-left:41px;*/
+/*}*/
+/*.det-actual span{*/
+    /*font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;*/
+
+    /*font-size: 18px;*/
+    /*color: #333333;*/
+/*}*/
+/*.det-actual img{*/
+    /*max-height:700px;*/
+    /*max-width: 960px;*/
+    /*margin-top: 40px;*/
+    /*display: block;*/
+    /*box-shadow: 0px 1px 2px 0px #ccc;*/
+/*}*/
+
+/*.update_info{*/
+    /*margin-top: 12px;*/
+    /*line-height: 20px;*/
+    /*font-size: 16px;*/
+    /*color: #888;*/
+/*}*/

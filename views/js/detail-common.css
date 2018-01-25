@@ -1,0 +1,277 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  /*background-color: #F6F7FB;*/
+  font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+}
+
+a {
+  color: #5aacec;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+
+}
+input{
+  outline: none;
+}
+.clearfix:after {
+  content: "020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  min-width: 1007px;
+  min-height: 900px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+ /* background-color: #F6F7FB;;*/
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  -o-background-size:cover;
+  background-size: cover;
+}
+/* 头部样式*/
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.header-box{
+    width:100%;
+    height: 80px;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.1);
+    background-color: #fff;
+     position: relative;
+     z-index: 1000;
+}
+.header{
+    /*max-width:1200px;
+    min-width:1024px;*/
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding:0 50px;
+    /*margin: 0 auto;*/
+}
+.header>div{
+    height: 100%;
+}
+.header .title{
+    display: inline-block;
+    width: 200px;
+    height: 100%;
+    color: #4B84F9 ;
+    background: url(../css/img/website/header.png) no-repeat center;
+    background-size:100% 67px;
+}
+.header .header-btn{
+    height: 100%;
+    width: 80px;
+    line-height: 80px;
+    cursor: pointer;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+}
+.header .header-btn.active{
+    box-sizing: border-box;
+    border-bottom:3px solid #4B84F9;
+    background: rgba(74,131,249,0.06);
+}
+/* 头部右侧样式*/
+.header .login-btn,.header .create-company-btn{
+      color:#666666;
+    height: 36px;
+    line-height: 36px;
+    width: 101px;
+    border-radius: 50px;
+    margin-top: 20px;
+    text-align: center;
+}
+.header .login-btn{
+    background: #4B84F9;
+    font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "5b8b4f53", sans-serif;;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+.header .login-btn:hover{
+    background: #257AED;
+}
+.header .create-company-btn{
+    border: 1px solid #257AED;
+    border-radius: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "5b8b4f53", sans-serif;;
+    font-size: 14px;
+    color: #4B84F9;
+    margin-left: 20px;
+}
+.create-company-btn:hover{
+    border-color: #257AED;
+    color: #257AED;
+}
+.header .header-btn:hover{
+    background-color:#257AED;
+    color: #fff;
+}
+/*图片样式*/
+.det-img{
+  display: block;
+  width: 100%;
+  height: 200px;
+}
+/*详情页标题样式设置*/
+.det-content-box{
+  position: relative;
+  background-color: #fff;
+  padding-top: 70px;
+  padding-bottom: 275px;
+}
+.det-content{
+  margin: 0 auto;
+  padding-top:60px;
+  padding-bottom: 120px;
+  width:960px;
+  height: 100%;
+}
+.det-title{
+  margin: 0 auto;
+}
+.det-title span{
+  font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+  font-size: 22px;
+  color: #333333;
+}
+.det-circle{
+  float: left;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #4B84F9;
+  border-radius:50%;
+  margin:7px 23px 0 0;
+}
+.det-date{
+  font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+
+  font-size: 12px;
+  color: #999999;
+  margin:20px 0 40px 41px;
+}
+.det-update{
+  font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+
+  font-size: 14px;
+  color: #666666;
+  margin-left: 41px;
+}
+
+/*详情页标题图片更新样式*/
+.det-actual{
+  margin-top: 70px;
+  padding-left:41px;
+}
+.det-actual span{
+  font-family: "Helvetica Neue", Helvetica, Arial,"PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "\5b8b\4f53", sans-serif;
+
+  font-size: 18px;
+  color: #333333;
+}
+.det-actual img{
+  max-height:700px;
+  max-width: 960px;
+  margin-top: 40px;
+  display: block;
+  box-shadow: 0px 1px 2px 0px #ccc;
+}
+
+.update_info{
+  margin-top: 12px;
+  line-height: 20px;
+  font-size: 16px;
+  color: #888;
+}
+.detal{
+  margin: 0 auto;
+  width: 960px;
+}
+.detal span{
+  display: block;
+  font-size: 14px;
+  color: #999999;
+  line-height: 24px;
+  margin-left: 41px;
+}
+.detal a{
+  font-size: 14px;
+  color: #999;
+  cursor: pointer;
+}
+.footer{
+    width: 100%;
+    height:263px;
+    background-color: #050F31;
+}
+.footer-top{
+    height: 197px;
+    width: 1213px;
+    margin: 0 auto;
+    border-bottom: 1px solid #222738;
+}
+.footer-img{
+    display: inline-block;
+    width: 140px;
+    height: 95px;
+    background: url(../css/img/website/fotter.png) no-repeat;
+    background-size: contain;
+    margin-top: 30px;
+    float: left;
+    margin-right: 123px;
+    cursor: pointer;
+}
+.footer-box{
+    float: left;
+    height: 140px;
+    width:100px;
+    margin-top: 40px;
+}
+.footer-p{
+    font-size: 14px;
+    color:  #50576F;
+    margin-bottom: 10px;
+}
+.footer-a{
+    display: block;
+    font-size: 12px;
+    color:  #50576F;
+    line-height: 25px;
+}
+.footer-p:hover,.footer-a:hover{
+    color: #8C8F99;
+}
+.last{
+    width: 230px;
+}
+.footer-mar{
+    margin-left: 140px;
+}
+.footer-bottom{
+    width: 1213px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #50576F;
+    line-height: 25px;
+    padding-top: 20px;
+    text-align: center;
+}

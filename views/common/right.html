@@ -1,0 +1,13 @@
+<!--热门推荐-->
+<ul class="sidebar_box" style="right: 0px;">
+	<{section name=n loop=$rtours}>
+    <{if $smarty.section.n.index eq 0}><li class="last_sidebar"><{else}><li><{/if}>
+        <a href="/tours/<{$rtours[n].id}>" target="_blank"><img src="<{$rtours[n].url}>" height="100%"></a>
+        <ul class="sidebar_bg" style="display: none; opacity: 1;">
+            <li class="sid_img"><a href="/tours/<{$rtours[n].id}>" target="_blank"><img src="<{$rtours[n].url}>" height="100%"></a></li>
+            <li class="sid_txt"><a href="/search/<{$rtours[n].departure}>" target="_blank"><{$rtours[n].departure}></a>▪<a href="/search/<{$rtours[n].city2}>"><{$rtours[n].city2}></a></li>
+        </ul>
+    </li><{/section}>
+    
+    <div class="hui_top" style="right: 1px;"></div>
+</ul>

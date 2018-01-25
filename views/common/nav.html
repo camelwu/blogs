@@ -1,0 +1,86 @@
+
+<div class="top_box">
+	<!--头部-->
+	<div class="top wrapper">
+		<a href="http://www.cgbt.net/" class="logo"></a>
+		<!--logo-->
+		<div class="top_area_box">
+			<div class="this_area">
+				<span><{$ipfrom}></span>
+				<ul class="area_box1">
+					<li class="area_name">热门站点</li>
+					<li class="area_bd"><{foreach item=hitareasitem
+						key=hitareaskey from=$hitareas}><{if $cg_branch[$hitareaskey] ne
+						''}><a href="http://<{$cg_branch[$hitareaskey]}>"><{/if}><{$hitareasitem}><{if
+							$cg_branch[$hitareaskey] ne ''}></a><{/if}> <{/foreach}>
+					</li> <{foreach from=$dataarea item=dataareaitem}>
+					<li class="clrfix area_bd_box">
+						<div class="fl area_bd_left"><{$dataareaitem.title}></div>
+						<div class="fl area_bd_right">
+							<{foreach item=dataareaitem2 key=dataareakey2
+							from=$dataareaitem.dataarr}> <{if $cg_branch[$dataareakey2] ne
+							''}><a href="http://<{$cg_branch[$dataareakey2]}>"><{/if}><{$dataareaitem2}><{if
+								$cg_branch[$dataareakey2] ne ''}></a><{/if}><{/foreach}>
+					</li> <{/foreach}>
+				</ul>
+			</div>
+
+			<div class="top_area_crm"><{$kname}></div>
+		</div>
+		<div class="search_box">
+			<!--搜索-->
+			<select name="arrvied"><option value="0">线路</option>
+				<option value="1">景点</option></select> <input type="text" name="keyvalue"
+				placeholder="搜目的地/景点/攻略/线路" /><a href="javascript:tijiao();"></a>
+
+		</div>
+		<{if $uid eq ''}>
+		<div class="log_reg">
+			<!--登录注册-->
+			<a href="<{$siteurl}>/login">登录</a>|<a href="<{$siteurl}>/registered">注册</a>
+		</div>
+		<{else}>
+		<div class="after_login clrfix">
+			<!--登录后-->
+			<div class="log_user">
+				用户：<a href="/MemberCenter"><{$username}></a>
+			</div>
+			<a href="/MemberCenter" class="user_news"><div class="news_num">0</div></a>
+			<a href="javascript:logout();">退出&nbsp;&nbsp;</a>
+		</div>
+		<{/if}>
+	</div>
+</div>
+<script language=javascript>
+	function tijiao() {
+		var keyvalue = $("input[name='keyvalue']");
+		var arrvied = $("select[name='arrvied']");
+		if (keyvalue.val() != "") {
+			window.location.href = "/search/" + arrvied.val() + "/"
+					+ encodeURI(keyvalue.val());
+		}
+	}
+	function logout() {
+		var url = "/getajax.php?action=logout";
+		$.getJSON(url, function(json) {
+			window.location.reload()
+		});
+	}
+</script>
+<div class="nav_box">
+	<!--导航-->
+	<div class="nav_bg wrapper">
+		<ul class="nav_main clrfix" style="left: 0;">
+			<li<{if $enname eq ''}> class="nav_on"<{/if}>><a
+				href="<{$siteurl}>">首页</a></li>
+			<li<{if $enname eq 'route'}> class="nav_on"<{/if}>><a
+				href="<{$siteurl}>/route">线路</a></li>
+			<li<{if $enname eq 'visa'}> class="nav_on"<{/if}>><a
+				href="<{$siteurl}>/visa">签证</a></li>
+			<li<{if $enname eq 'scenic'}> class="nav_on"<{/if}>><a
+				href="<{$siteurl}>/scenic">景点门票</a></li>
+			<li<{if $enname eq 'about'}> class="nav_on"<{/if}>><a
+				href="<{$siteurl}>/about">团队介绍</a></li>
+		</ul>
+	</div>
+</div>

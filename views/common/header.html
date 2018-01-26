@@ -1,105 +1,15 @@
-
-<div class="top_box">
-	<!--头部-->
-	<div class="top wrapper">
-		<a href="<{$siteurl}>" class="logo"></a>
-		<!--logo-->
-		<div class="top_area_box">
-			<div class="this_area">
-				<span><{$ipfrom}></span>
-				<ul class="area_box1">
-					<li class="area_name">热门城市</li>
-					<li class="area_bd"><{foreach item=hitareasitem
-						key=hitareaskey from=$hitareas}><{if $cg_branch[$hitareaskey] ne
-						''}><a href="http://<{$cg_branch[$hitareaskey]}>"><{/if}><{$hitareasitem}><{if
-							$cg_branch[$hitareaskey] ne ''}></a><{/if}> <{/foreach}>
-					</li> <{foreach from=$dataarea item=dataareaitem}>
-					<li class="clrfix area_bd_box">
-						<div class="fl area_bd_left"><{$dataareaitem.title}></div>
-						<div class="fl area_bd_right">
-							<{foreach item=dataareaitem2 key=dataareakey2
-							from=$dataareaitem.dataarr}> <{if $cg_branch[$dataareakey2] ne
-							''}><a href="http://<{$cg_branch[$dataareakey2]}>"><{/if}><{$dataareaitem2}><{if
-								$cg_branch[$dataareakey2] ne ''}></a><{/if}><{/foreach}>
-					</li> <{/foreach}>
-				</ul>
-			</div>
-
-			<div class="top_area_crm">本地分公司</div>
-		</div>
-		<div class="search_box">
-			<!--搜索-->
-			<select name="tt" style="border: 0;"><option value="arrvied" classid="1">目的地</option>
-				<option value="scenic" classid="3">景点</option>
-				<option value="blog" classid="5">攻略</option>
-				<option value="tour" classid="0">线路</option></select> <input type="text"
-				name="keyvalue" placeholder="搜目的地/景点/攻略/线路" /><a
-				href="javascript:tijiao();"></a>
-
-		</div>
-		<{if $uid eq ''}>
-		<div class="log_reg">
-			<!--登录注册-->
-			<a href="<{$siteurl}>/login">登录</a>|<a href="<{$siteurl}>/registered">注册</a>
-		</div>
-		<{else}>
-		<div class="after_login clrfix">
-			<!--登录后-->
-			<div class="log_user">
-				用户：<a href="/MemberCenter"><{$username}></a>
-			</div>
-			<a href="/MemberCenter" class="user_news"><div class="news_num">0</div></a>
-			<a href="javascript:logout();">退出&nbsp;&nbsp;</a>
-		</div>
-		<{/if}>
-	</div>
-</div>
-<script language=javascript>
-	function tijiao() {
-		var keyvalue = $("input[name='keyvalue']");
-		if (keyvalue.val() != "") {
-			window.location.href = "/search/" + encodeURI(keyvalue.val());
-		}
-	}
-	function logout() {
-		var url = "/getajax.php?action=logout";
-		$.getJSON(url, function(json) {
-			window.location.reload()
-		});
-	}
-</script>
-<div class="nav_box">
-	<!--导航-->
-	<div class="nav_bg wrapper">
-		<ul class="menu_box">
-			出游目的地 <{foreach from=$layermax item=layeritems}>
-			<li class="menu_box2 mb2_a">
-				<!--周边游--> <span class="mb2_icon"><{$layeritems.title}></span>
-				<div class="mb2_txt">
-					<{foreach from=$layeritems.layer1 item=layer11}> <a href="/<{$layeritems.html}>/--<{$layer11.id}>-------"><{$layer11.title}></a>
-					<{/foreach}>
-				</div>
-				<div class="menu_box3">
-				<{foreach from=$layeritems.layer2 item=layer22}>
-					<dl class="clrfix">
-						<dt><{$layer22.title}></dt>
-						<dd>
-						<{foreach from=$layer22.area item=layer33}>
-							<a href="/<{$layeritems.html}>/--<{$layer33.id}>-------"><{$layer33.title}></a> <{/foreach}>
-						</dd>
-					</dl>
-					<{/foreach}>
-				</div>
-			</li> <{/foreach}>
-
-		</ul>
-		<ul class="nav_main clrfix">
-			<li<{if $enname eq ''}> class="nav_on"<{/if}>><a href="<{$siteurl}>">首页</a></li>
-			<li<{if $enname eq 'visa'}> class="nav_on"<{/if}>><a href="<{$siteurl}>/visa">签证</a></li><{foreach from=$layer item=layeritem}>
-			<li<{if $enname eq $layeritem.html}> class="nav_on"<{/if}>><a href="<{$siteurl}>/<{$layeritem.html}>"><{$layeritem.title}></a></li>
-			<{/foreach}>
-			<li <{if $enname eq 'custom'}> class="nav_on"<{/if}>><a href="<{$siteurl}>/custom">私人定制</a></li>
-			<li <{if $enname eq 'scenic'}> class="nav_on"<{/if}>><a href="<{$siteurl}>/scenic">景点门票</a></li>
-		</ul>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="blog-masthead">
+	<div class="container">
+		<nav class="blog-nav">
+		<a class="blog-nav-item active" href="/">首页</a>
+		<a class="blog-nav-item" href="/blog">博客</a>
+		<a class="blog-nav-item" href="/login">登录</a>
+		<a class="blog-nav-item" href="/reg">注册</a>
+		<a class="blog-nav-item" href="/chat">聊天</a>
+		</nav>
 	</div>
 </div>

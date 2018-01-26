@@ -9,21 +9,33 @@ const proxy = require('http-proxy-middleware')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
+const session = require('express-session')
+const mongoStore = require('connect-mongo')(session)
 const app = express()
-const db = require('./models/db')
-console.log(db)
+const router = express.Router()
 var routes = require('./routes')
+const settings = require('./settings')
 
 app.engine('html', ejs.renderFile)
 app.set('views', path.join(__dirname, './views'))
 app.set('view engine', 'html')
-app.use('/static', express.static('public'))
-// app.use(express.static(path.join(__dirname, 'public')));
+// app.use('/static', express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(cookieParser())
+app.use(session({
+  secret: settings.cookieSecret,
+  key: settings.db,
+  cookie: {maxAge: 1000*60*60*24*30},
+  store: new mongoStore({
+    db: settings.db,
+    host: settings.host,
+    port: settings.port
+  })
+}))
 
 const ajax = axios.create({
   baseURL: 'http://localhost',

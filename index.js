@@ -12,7 +12,7 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const mongoStore = require('connect-mongo')(session)
 const app = express()
-const router = express.Router()
+// const router = express.Router()
 var routes = require('./routes')
 const settings = require('./settings')
 
@@ -26,6 +26,7 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(cookieParser())
+/*
 app.use(session({
   secret: settings.cookieSecret,
   key: settings.db,
@@ -36,6 +37,7 @@ app.use(session({
     port: settings.port
   })
 }))
+*/
 
 const ajax = axios.create({
   baseURL: 'http://localhost',

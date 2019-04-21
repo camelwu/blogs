@@ -42,40 +42,36 @@ function front_get(req, res) {
   }
 }
 function handle_get(req, res) {
-  if ('/' == req.path) {
-    res.render('index', { title: 'Express', cover: {} })
+  let path, uriAry = req.path.split('/'),
+    uri = uriAry[1],
+    exists = fs.existsSync('./views/' + uri + '.html');
+  if (uriAry.length < 3) {
+    path = 'admin/index'
+    exists = fs.existsSync('./views/' + path + '.html')
   } else {
-    let path, uriAry = req.path.split('/'),
-      uri = uriAry[1],
-      exists = fs.existsSync('./views/' + uri + '.html');
-    if (uriAry.length < 3) {
-      path = 'admin/index'
-      exists = fs.existsSync('./views/' + path + '.html')
-    } else {
-      path = uriAry[2] == '' ? 'admin/index' : 'admin/' + uriAry[2]
-      exists = fs.existsSync('./views/' + path + '.html')
+    path = uriAry[2] == '' ? 'admin/index' : 'admin/' + uriAry[2]
+    exists = fs.existsSync('./views/' + path + '.html')
+  }
+  console.log(path)
+
+  if (exists) {
+    let status, result
+    switch (path) {
+      case 'article':
+
+        break;
+      case 'company':
+
+        break;
+      case 'reg':
+
+        break;
+      default:
+        break;
     }
-    console.log(path)
-
-    if (exists) {
-      let status, result
-      switch (path) {
-        case 'article':
-
-          break;
-        case 'company':
-
-          break;
-        case 'reg':
-
-          break;
-        default:
-          break;
-      }
-      res.render(path, { title: tit[path], error: 'Something blew up!' })
-    } else {
-      res.status(404).send({ error: '404!' });
-    }
+    res.render(path, { title: tit[path], setting: setting, error: 'Something blew up!' })
+  } else {
+    res.status(404).send({ error: '404!' });
   }
 }
 // post请求

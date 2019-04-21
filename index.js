@@ -2,21 +2,26 @@
 
 const express = require('express')
 const path = require('path')
-const ejs = require('ejs')
+// const ejs = require('ejs')
 const fs = require('fs')
-const axios = require('axios')
 const proxy = require('http-proxy-middleware')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const session = require('express-session')
+const art = require('express-art-template')
 const mongoStore = require('connect-mongo')(session)
-const app = express()
-// const router = express.Router()
-var routes = require('./routes')
-const settings = require('./settings')
 
-app.engine('html', ejs.renderFile)
+const settings = require('./settings')
+const mongoose = require('./models/mongoose')
+
+const app = express(),
+  routes = require('./routes')
+app.engine('html', art);
+app.set('view options', {
+  debug: process.env.NODE_ENV !== 'production'
+});
+// app.engine('html', ejs.renderFile)
 app.set('views', path.join(__dirname, './views'))
 app.set('view engine', 'html')
 // app.use('/static', express.static('public'))
@@ -24,21 +29,20 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
-/*
+
 app.use(session({
   secret: settings.cookieSecret,
-  key: settings.db,
-  cookie: {maxAge: 1000*60*60*24*30},
+  saveUninitialized: false,
+  resave: false,
   store: new mongoStore({
-    db: settings.db,
-    host: settings.host,
-    port: settings.port
+    mongooseConnection: mongoose.connection,
+    // url: 'mongodb://' + settings.host + ':' + settings.port + '/' + settings.db,
+    touchAfter: 24 * 3600
   })
 }))
-*/
-
+/*
 const ajax = axios.create({
   baseURL: 'http://localhost',
   timeout:1000*3,
@@ -55,9 +59,9 @@ const ajax = axios.create({
     }
   }
 })
-
+*/
 routes(app)
 
-app.listen(3009, function(){
+app.listen(3009, function () {
   console.log('Express server listening on port 3009')
 })

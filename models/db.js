@@ -1,5 +1,6 @@
-const settings = require('../settings.js')
-const Db = require('mongodb').Db
-const Connection = require('mongodb').Connection
-const Server = require('mongodb').Server
-modules.export = new Db(settings.db, newServer(settings.host, settings.port), {safe:true})
+const settings = require('../settings')
+, Db = require('mongodb').Db
+, Connection = require('mongodb').Connection
+, server = require('mongodb').Server;
+
+module.exports = new Db(settings.db, new server(settings.host, settings.port), { safe: true })

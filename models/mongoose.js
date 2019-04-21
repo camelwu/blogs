@@ -1,21 +1,18 @@
-var mongoose=require("mongoose");
-var db='mongodb://localhost:27017/blog';
-mongoose.connect(db);
+const mongoose = require("mongoose")
+const settings = require('../settings')
+mongoose.connect('mongodb://' + settings.host + ':' + settings.port + '/' + settings.db + '',{ useNewUrlParser: true } )
+const db = mongoose.connection
+db.on('connected', function () {
+    console.log("connected..")
+})
+db.on('error', function (err) {
+    console.log("connected err" + err)
+})
+db.on('disconnected', function () {
+    console.log("disconnected")
+})
+db.on('open', function () {
+    console.log("open")
+})
 
-mongoose.connection.on('connected',function () {
-    console.log("connected..");
-});
-mongoose.connection.on('error',function (err) {
-    console.log("connected err"+err);
-});
-mongoose.connection.on('disconnected',function () {
-    console.log("disconnected");
-});
-process.on('SIGINT',function () {
-    mongoose.connection.close(function () {
-        console.log("close");
-        process.exit(0);
-    });
-});
-
-exports.mongoose=mongoose;
+module.exports = mongoose

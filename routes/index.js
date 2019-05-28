@@ -94,7 +94,31 @@ function handle_post(req, res) {
       break;
   }
   res.writeHead(200, { "Content-Type": mime });
-  // res.render('index', { title: 'Express', cover: {} })
+  res.status(200).send({ error: '404!' });
+}
+function user_post(req, res){
+  const key = req.path,
+    mime = "application/json;charset=utf-8",
+    body = req.body
+  let status, msg
+  switch (key) {
+    case 'login':
+      msg = {
+        email: body.email,
+        password: body.password
+      }
+      break;
+    case 'signup':
+
+      break;
+    case 'reg':
+
+      break;
+    default:
+      break;
+  }
+  //res.writeHead(200, { "Content-Type": mime });
+  res.status(200).send({ msg: msg });
 }
 // delete请求
 function handle_delete(req, res) {
@@ -110,6 +134,8 @@ module.exports = function (app) {
   app.get('/' + setting.manage + '(/*)?', [handle_get])
   app.get('/*', front_get)
   // 
+  app.post('/login', user_post)
+  app.post('/signup', user_post)
   app.post('*', [checkLogin, handle_post])
   // 
   app.put('*', [checkLogin, handle_put])

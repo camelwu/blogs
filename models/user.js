@@ -45,4 +45,4 @@ User.get = function(name,cb){
     })
 }
 
-module.exports = user
+module.exports = User

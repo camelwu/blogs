@@ -1,6 +1,6 @@
 module.exports = {
   manage: 'admin',
-  project: '大话西游',
+  project: '河洛文化',
   cookieSecret: 'juOsun',
   db: 'test',
   host: 'localhost',

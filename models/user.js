@@ -1,48 +1,112 @@
 const crypto = require('crypto')
 const mongoose = require('./mongoose')
 const UserSchema = new mongoose.Schema({
-    username: String,
-    password: String,
-    email: String,
-    avtor: String,
-    isSuper: Boolean
-}, { collection: 'users' })
+  "username": String,
+  "password": String,
+  "email": String,
+  "isSuper": Boolean
+}, {
+  collection: 'users'
+})
 const userModel = mongoose.model('User', UserSchema)
 
-function User(user){
-    this.username = user.username
-    this.password = user.password
-    this.email = user.email
-    this.avtor = user.avtor
-    this.isSuper = user.isSuper
-}
-User.prototype.save = function(cb){
-    const md5 = crypto.createHash('md5'),
-    email_md5 = md5.update(this.email.toLowerCase()).digest('hex')
+function findUser(option, callback) {
+  userModel.find(option, function (err, result) {
+    if (err) return callback(err);
+    // 渲染模板
+    var data = {
+      userLists: result
+    };
 
-    var user = {
-        username = this.username,
-        password = this.password,
-        email = this.email,
-        avtor = this.avtor,
-        isSuper = this.isSuper
-    },
-    // newUser.create
-    newUser = new userModel(user)
-    newUser.save(function(err,user){
-        if(err){
-            return cb(err)
-        }
-        cb(null,user)
-    })
+    callback(data)
+  })
 }
-User.get = function(name,cb){
-    userModel.findOne({username:name},function(err,user){
-        if(err){
-            return cb(err)
-        }
-        cb(null,user)
-    })
+
+// 渲染用户列表
+var renderUserList = function (userType, callback) {
+  switch (userType) {
+    case 'all':
+      findUser({}, callback)
+      break;
+    case 'super':
+      findUser({
+        isSuper: true
+      }, callback)
+      break;
+    default:
+      findUser({
+        isSuper: false
+      }, callback)
+  }
+};
+
+// 渲染用户详情
+var renderUser = function (userId, callback) {
+  var userId = mongoose.mongo.ObjectId(userId)
+  userModel.find({
+    _id: userId
+  }, function (err, result) {
+    if (err) return callback(err);
+
+    callback(result[0])
+  })
 }
+
+// 用户管理列表分页获取数据
+var renderManage = function (opt, callback) {
+  var currentSize = (opt.currentPage - 1) * opt.pageSize;
+  userModel.find({}, function (err, result) {
+    var data = {
+      userLists: result
+    };
+    callback(result)
+  }).skip(currentSize).limit(opt.pageSize)
+}
+// 用户管理列表获取总数
+var getLength = function (callback) {
+  userModel.find({}, function (err, result) {
+    callback(result.length)
+  })
+}
+
+// 用户编辑保存
+var saveUser = function (user_opt, callback) {
+
+  if (user_opt.params_id) {
+    var _id = user_opt.params_id
+    userModel.findOneAndUpdate({
+      _id: _id
+    }, user_opt, function (err, result) {
+      callback(result._id)
+    })
+  } else {
+    userModel.create(user_opt, function (err, result) {
+      if (err) {
+        return callback(err)
+      }
+      callback(result)
+    })
+  }
+}
+
+// 用户删除
+var deleteUser = function (userId, callback) {
+  userModel.remove({
+    _id: userId
+  }, function (err, result) {
+    console.log(result)
+    callback()
+  })
+}
+
+var User = {
+  renderUserList: renderUserList,
+  renderUser: renderUser,
+  renderManage: renderManage,
+  getLength: getLength,
+  findUser: findUser,
+  saveUser: saveUser,
+  deleteUser: deleteUser
+};
 
 module.exports = User

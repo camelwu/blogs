@@ -25,12 +25,12 @@
     "nodemon": "^1.18.11"
   },
   "scripts": {
-    "dev": "node index.js",
-    "start": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "pm2 index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/camelwu/blogs.git"
+    "url": "git+https://github.com/camelwu/express-cms.git"
   },
   "keywords": [
     "blog"
@@ -38,7 +38,7 @@
   "author": "camelwu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/camelwu/blogs/issues"
+    "url": "https://github.com/camelwu/express-cms/issues"
   },
-  "homepage": "https://github.com/camelwu/blogs#readme"
+  "homepage": "https://github.com/camelwu/express-cms#readme"
 }

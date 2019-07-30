@@ -19,7 +19,8 @@ express项目，离开java和php后很久没正经写过服务器端渲染，事
 + connect-flash，morgan的使用
 
 利用这段时间工作不忙的机会，把技术进行整理和分享：  
-### 技术栈 
+
+## 技术栈 
 ``` 
 {
     framework: express V4.x,  
@@ -32,7 +33,51 @@ express项目，离开java和php后很久没正经写过服务器端渲染，事
 
 ```
 ### 项目结构
-功能：  
+```
+.
+├── README.md
+├── db
+│   ├── admin.js
+│   └── index.js
+├── index.js
+├── models
+│   ├── article.js
+│   ├── company.js
+│   ├── mongoose.js
+│   └── user.js
+├── node_modules
+├── nodemon.json
+├── package-lock.json
+├── package.json
+├── router
+│   └── index.js
+├── settings.js
+├── statics
+│   ├── css
+│   ├── favicon.ico
+│   ├── img
+│   ├── js
+│   ├── tinymce
+│   └── uploads
+├── views
+│   ├── 404.html
+│   ├── 50x.html
+│   ├── aboutus.html
+│   ├── admin
+│   ├── contactus.html
+│   ├── faq.html
+│   ├── home.html
+│   ├── index.html
+│   ├── login.html
+│   ├── news.html
+│   ├── page
+│   ├── recruitment.html
+│   ├── service.html
+│   └── signup-willdel.html
+└── yarn.lock
+```
+
+### 功能：  
 后台管理页面
 
 
